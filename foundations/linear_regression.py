@@ -5,8 +5,8 @@ class Solution:
 
     def get_model_prediction(self, X: NDArray[np.float64], weights: NDArray[np.float64]) -> NDArray[np.float64]:
         # X is (n, m), weights is (m,) -> return (n,) predictions
-        prediction = np.matmul(X, weights)
-        return np.round(prediction,5 )
+        y = np.dot(X, weights)
+        return np.round(y,5 )
     def get_error(self, model_prediction: NDArray[np.float64], ground_truth: NDArray[np.float64]) -> float:
-        error= np.mean(np.square(model_prediction - ground_truth))
-        return round(error, 5 )
+        mse= np.mean((model_prediction - ground_truth) ** 2)
+        return round(mse, 5 )
