@@ -8,5 +8,9 @@ class Solution:
         y = np.dot(X, weights)
         return np.round(y,5 )
     def get_error(self, model_prediction: NDArray[np.float64], ground_truth: NDArray[np.float64]) -> float:
-        mse= np.mean((model_prediction - ground_truth) ** 2)
+        mse= np.mean(model_prediction - ground_truth) ** 2
         return round(mse, 5 )
+
+    def get_error(self, model_prediction: NDArray[np.float64], ground_truth: NDArray[np.float64]) -> float:
+        mse = np.mean((model_prediction - ground_truth) ** 2)
+        return round(float(mse), 5)
